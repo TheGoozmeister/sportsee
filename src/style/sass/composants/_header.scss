@@ -1,0 +1,25 @@
+header {
+    display: flex;
+    background-color: black;
+    padding : 10px;
+}
+
+.menu {
+    width: 60%;
+    padding-left: 10%;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    &__label {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.logo {
+    width: 20%;
+    object-fit: cover;
+    & img {
+        width: 100%;
+    }
+}

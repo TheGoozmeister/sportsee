@@ -1,0 +1,18 @@
+.nav {
+    width: 10%; 
+    display: flex;
+    height: 90vh;
+    flex-direction: column;  
+    justify-content: space-between;
+    background-color: black;
+    align-items: center;
+    &__navbar {
+        padding-top: 150px;
+    }
+    &__copyrights {
+        transform: rotate(-90deg);
+        color: white;
+        width: 200px;
+        padding-left: 300px;
+    }
+}
