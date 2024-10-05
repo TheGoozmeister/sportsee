@@ -1,0 +1,26 @@
+.cardKeyData {
+    display: flex;
+    background-color: #FBFBFB;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    padding: 30px 10px 30px 20px;
+    &__icon {
+        width: 60px;
+        & img {
+            width: 60px;
+        }
+    }
+    &__infos {
+        margin-left: 20px;
+        &__datas {
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        &__label {
+            font-weight: 500;
+            font-size: 14px;
+            color: #74798C;
+        }
+    }
+}

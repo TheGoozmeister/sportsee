@@ -22,7 +22,7 @@ async function getUserInfos(userId) {
 async function getUserActivity(userId) {
     try {
         const response = await fetch(`http://localhost:3000/user/${userId}/activity`);
-        const userActivity = response.json();
+        const userActivity = await response.json();
         const userActivitySessions = userActivity.data.sessions;
         return userActivitySessions;
     } catch (error) {
@@ -33,7 +33,7 @@ async function getUserActivity(userId) {
 async function getAverageSession(userId) {
     try {
         const response = await fetch(`http://localhost:3000/user/${userId}/average-sessions`);
-        const sessions = response.json();
+        const sessions = await response.json();
         const sessionsDatas = sessions.data.sessions;
         return sessionsDatas;
     } catch (error) {
@@ -44,7 +44,7 @@ async function getAverageSession(userId) {
 async function getCompletion(userId) {
     try {
         const response = await fetch(`http://localhost:3000/user/${userId}`);
-        const user = response.json();
+        const user = await response.json();
         const userCompletion = user.data.todayScore;
         return userCompletion;
     } catch (error) {
@@ -55,18 +55,19 @@ async function getCompletion(userId) {
 async function getPerformance(userId) {
     try {
         const response = await fetch(`http://localhost:3000/user/${userId}/performance`);
-        const performance = response.json();
+        const performance = await response.json();
         const performanceDatas = performance.data;
+        console.log(performanceDatas)
         return performanceDatas;
     } catch (error) {
         console.log(error);
     }
 }
 
-async function getKeyData(userId) {
+async function getKeyDatas(userId) {
     try {
         const response = await fetch(`http://localhost:3000/user/${userId}`);
-        const user = response.json();
+        const user = await response.json();
         const keyData = user.data.keyData;
         return keyData;
     } catch (error) {
@@ -81,5 +82,5 @@ export {
     getAverageSession,
     getCompletion,
     getPerformance,
-    getKeyData
+    getKeyDatas
 }

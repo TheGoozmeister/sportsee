@@ -1,0 +1,66 @@
+.main {
+    display: flex;
+}
+
+.dataBoard {
+    width: 80%;
+    margin: auto;
+    &__title {
+        margin-bottom: 50px;
+        margin-top: 30px;
+        &__welcome {
+            margin-bottom: 20px;
+            font-size: 48px;
+            font-weight: 500;
+        }
+        &__goals {
+            font-weight: 400;
+            font-size: 18px;
+        }
+    }
+    &__graphics {
+        display: flex;
+        width: 100%;
+        &__leftSide {
+            width: 70%;
+            &__topSide {
+                margin-bottom: 20px;
+            }
+            &__bottomSide {
+                display: flex;
+                height: 270px;
+                width: 100%;
+                justify-content: space-between;
+                overflow: scroll;
+            }
+        }
+        &__rightSide {
+            width: 20%;
+            margin-left: 10%;
+        }
+    }
+}
+
+.cardsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:end;
+}
+
+#firstname {
+    color: #FF0101;
+}
+
+#radarContainer {
+    background-color: black;
+}
+
+.graphContainer {
+    width: 250px;
+    height: 263px;
+}
+
+#radGr {
+    margin-right: 0;
+}

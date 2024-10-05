@@ -1,0 +1,48 @@
+.barchart {
+    background-color: #FBFBFB;
+    padding: 20px 15px 20px 15px;
+    border-radius: 10px;
+    &__title {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__label {
+        font-weight: 500;
+        font-size: 15px;
+        color: #20253A;
+    }
+    &__legend {
+        display: flex;
+        justify-content: space-between;
+        &__weight {
+            display: flex;
+            align-items: center;
+            &__color {
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background-color: black;
+            }
+            &__label {
+                font-weight: 500;
+                font-size: 14px;
+                color: #74798C;
+            }
+        }
+        &__calories {
+            display: flex;
+            align-items: center;
+            &__color {
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background-color: red;
+            }
+            &__label {
+                font-weight: 500;
+                font-size: 14px;
+                color: #74798C;
+            }
+        }
+    }
+}
