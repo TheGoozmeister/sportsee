@@ -8,7 +8,7 @@ function LinechartAverageSession() {
 
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
-            console.log(payload); // Debug pour vérifier les données du payload
+            console.log(payload); 
             return (
                 <div
                     style={{
@@ -20,7 +20,6 @@ function LinechartAverageSession() {
                         borderRadius: 5,
                     }}
                 >
-                    {/* Vérification si la clé 'value' existe */}
                     {payload[0]?.value ? (
                         <p>{`${payload[0].value} min`}</p>
                     ) : (
