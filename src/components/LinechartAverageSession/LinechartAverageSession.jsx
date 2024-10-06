@@ -20,7 +20,6 @@ function LinechartAverageSession() {
                         borderRadius: '5px',
                     }}
                 >
-                    {/* On affiche la durée en minutes si elle est disponible */}
                     {payload[0]?.value ? (
                         <p>{`${payload[0].value} min`}</p>
                     ) : (
@@ -50,12 +49,12 @@ function LinechartAverageSession() {
     };
 
     return (
-        <div className="average" style={{ backgroundColor: 'red', borderRadius: '10px', padding: '10px', color: 'white' }}>
-            <h3 style={{ color: 'white', fontSize: '15px', marginBottom: '20px' }}>
+        <div className="average">
+            <h3 className="average__title">
                 Durée moyenne des <br />
                 sessions
             </h3>
-            <ResponsiveContainer width="100%" height={200}>
+            <ResponsiveContainer width={278} height={263}>
                 <LineChart 
                     data={averageSession}
                     margin={{ top: 0, right: 10, bottom: 0, left: 10 }}
@@ -88,12 +87,12 @@ function LinechartAverageSession() {
                     <Tooltip
                         content={<CustomTooltip />}
                         cursor={{ stroke: 'rgba(255, 255, 255, 0.2)', strokeWidth: 50 }}
-                        
                     />
                 </LineChart>
             </ResponsiveContainer>
         </div>
     );
 }
+
 
 export default LinechartAverageSession;

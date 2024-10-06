@@ -28,7 +28,7 @@
             }
             &__bottomSide {
                 display: flex;
-                height: 270px;
+                height: 310px;
                 width: 100%;
                 justify-content: space-between;
                 overflow: scroll;
@@ -57,8 +57,9 @@
 }
 
 .graphContainer {
-    width: 250px;
+    width: 278px;
     height: 263px;
+    margin-right: 10px;
 }
 
 #radGr {

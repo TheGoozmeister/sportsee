@@ -55,15 +55,23 @@ function RadarCharTypeActivity() {
     },[USER_ID]);
 
     return(
-        <ResponsiveContainer width="100%" height="100%" >
-            <RadarChart cx="50%" cy="50%" outerRadius="60%" innerRadius="5%" data={performance} >
+        <ResponsiveContainer width={278} height={263} >
+            <RadarChart 
+                cx="50%" 
+                cy="50%" 
+                outerRadius="70%" 
+                innerRadius="5%" 
+                data={performance} 
+                style={{ backgroundColor: '#282D30' }}
+            >
                 <PolarGrid radialLines={false} />
                 <PolarAngleAxis 
                     dataKey="kind" 
-                    tick={{fontSize:12, fontWeight:500}}
+                    tick={{fontSize:11, fontWeight:500}}
                     stroke="white"
                     tickFormatter={(english) => translate(english)}
                     dy={5}    
+                    tickLine={false}
                 />
                 <Radar
                     name="Performance"

@@ -1,0 +1,12 @@
+.average {
+    background-color: red;
+    color: white;
+    position: relative;
+    &__title {
+        color: white;
+        font-size: 15px;
+        position: absolute;
+        top:5%;
+        left: 5%;
+    }
+}

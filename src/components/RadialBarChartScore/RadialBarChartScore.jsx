@@ -30,7 +30,7 @@ function RadialBarChartScore () {
 
     return (
         <div className='radialChartScore'>
-            <PieChart width={300} height={263} className="radialGr">
+            <PieChart width={278} height={263} className="radialGr">
                 <Pie
                     data={averageScore}
                     cx="45%"
