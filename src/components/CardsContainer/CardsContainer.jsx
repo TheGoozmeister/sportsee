@@ -7,15 +7,15 @@ const carbsIcon = require('../../assets/icons/carbs-icon.png');
 const fatIcon = require('../../assets/icons/fat-icon.png');
 
 
-function CardsContainer() {
+function CardsContainer(props) {
 
     const [keyDatas, setKeyDatas] = useState([]);
-    const USER_ID = 12;
+    const {userId}=props;
 
     useEffect(()=>{
         async function getKD() {
             try {
-                const keyDatas = await getKeyDatas(USER_ID);
+                const keyDatas = await getKeyDatas(userId);
                 console.log(keyDatas);
                 setKeyDatas(keyDatas);
             } catch (error) {
@@ -23,7 +23,7 @@ function CardsContainer() {
             }
         }
         getKD();
-    },[USER_ID]);
+    },[userId]);
 
 
     return (

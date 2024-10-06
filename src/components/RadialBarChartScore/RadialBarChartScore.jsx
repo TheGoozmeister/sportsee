@@ -3,18 +3,18 @@ import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
 import { getCompletion } from '../../services/api';
 
 
-function RadialBarChartScore () {
+function RadialBarChartScore (props) {
     
     const [averageScore, setAverageScore] = useState([]);
     const [redFraction, setRedFraction] = useState();
     const [scorePorcent, setScorePorcent] = useState();
-    const USER_ID= 12;
+    const {userId}=props;
 
 
     useEffect(()=>{
         async function getAverage() {
             try {
-                const averageScore = await getCompletion(USER_ID);
+                const averageScore = await getCompletion(userId);
                 console.log(averageScore)
                 const scoreToSet = [{score: averageScore}]
                 const redFraction = averageScore*360;
@@ -26,7 +26,7 @@ function RadialBarChartScore () {
             }
         }
         getAverage();
-    },[USER_ID]);
+    },[userId]);
 
     return (
         <div className='radialChartScore'>

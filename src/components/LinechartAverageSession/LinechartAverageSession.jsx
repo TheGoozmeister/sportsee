@@ -2,11 +2,11 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'rec
 import { useEffect, useState } from 'react';
 import { getAverageSession } from '../../services/api';
 
-function LinechartAverageSession() {
+function LinechartAverageSession(props) {
 
-    
+
     const [averageSession, setAverageSession] = useState([]);
-    const USER_ID = 12;
+    const {userId}=props;
 
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
@@ -36,7 +36,7 @@ function LinechartAverageSession() {
     useEffect(() => {
         async function getAverage() {
             try {
-                const averageSession = await getAverageSession(USER_ID);
+                const averageSession = await getAverageSession(userId);
                 setAverageSession(averageSession);
                 console.log("averagesession", averageSession)
             } catch (error) {
@@ -44,7 +44,7 @@ function LinechartAverageSession() {
             }
         }
         getAverage();
-    }, [USER_ID]);
+    }, [userId]);
 
     const daysWeekTxt = (day) => {
         const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];

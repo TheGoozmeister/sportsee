@@ -3,15 +3,15 @@ import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 import { useEffect } from 'react';
 import { getUserActivity } from '../../services/api';
 
-function Barchart() {
+function Barchart(props) {
 
     const [activity, setActivity] = useState([]);
-    const USER_ID=12;
+    const {userId}=props;
 
     useEffect(()=>{
         async function getActivity() {
             try {
-                const userActivity = await getUserActivity(USER_ID);
+                const userActivity = await getUserActivity(userId);
                 const activityWithIndex = userActivity.map((entry, index) => ({ ...entry, index: index + 1 }));
                 setActivity(activityWithIndex);
             } catch (error) {
@@ -19,7 +19,7 @@ function Barchart() {
             }
         }
         getActivity();
-    },[USER_ID]);
+    },[userId]);
     
     const minYValue = Math.min(...activity.map(entry => entry.kilogram)) - 1;
 

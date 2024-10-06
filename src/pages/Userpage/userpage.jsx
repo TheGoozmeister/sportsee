@@ -11,7 +11,7 @@ import RadialBarChartScore from "../../components/RadialBarChartScore/RadialBarC
 
 function Userpage () {
 
-    const USER_ID = 12;
+    const USER_ID = 18;
 
     const [userInfos, setUserInfos] = useState({});
 
@@ -41,22 +41,22 @@ function Userpage () {
                     <div className="dataBoard__graphics">
                         <div className="dataBoard__graphics__leftSide">
                             <div className="dataBoard__graphics__leftSide__topSide">
-                                <Barchart />
+                                <Barchart userId={USER_ID} />
                             </div>
                             <div className="dataBoard__graphics__leftSide__bottomSide">
                                 <div className="graphContainer">
-                                    <LinechartAverageSession />
+                                    <LinechartAverageSession userId={USER_ID} />
                                 </div>
                                 <div className="graphContainer"id="radarContainer">
-                                    <RadarCharTypeActivity />
+                                    <RadarCharTypeActivity userId={USER_ID} />
                                 </div>
                                 <div className="graphContainer" id="radGr">
-                                    <RadialBarChartScore />
+                                    <RadialBarChartScore userId={USER_ID} />
                                 </div>
                             </div>
                         </div>
                         <div className="dataBoard__graphics__rightSide">
-                            <CardsContainer />
+                            <CardsContainer userId={USER_ID} />
                         </div>
                     </div>
                     

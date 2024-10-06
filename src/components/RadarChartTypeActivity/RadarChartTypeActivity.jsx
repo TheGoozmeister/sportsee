@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import { getPerformance } from '../../services/api';
 
 
-function RadarCharTypeActivity() {
+function RadarCharTypeActivity(props) {
 
     const [performance, setPerformance] = useState([]);
-    const USER_ID=12;
+    const {userId}=props;
 
     const translate = (english) => {
         
@@ -40,7 +40,7 @@ function RadarCharTypeActivity() {
     useEffect(()=>{
         async function getPerf() {
             try {
-                const performance = await getPerformance(USER_ID);
+                const performance = await getPerformance(userId);
                 const cleanedPerformance = performance.data.map(item=>({
                     value: item.value,
                     kind: performance.kind[item.kind]
@@ -52,7 +52,7 @@ function RadarCharTypeActivity() {
             }
         }
         getPerf();
-    },[USER_ID]);
+    },[userId]);
 
     return(
         <ResponsiveContainer width={278} height={263} >
