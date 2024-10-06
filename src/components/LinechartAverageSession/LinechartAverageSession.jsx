@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { getAverageSession } from '../../services/api';
 
 function LinechartAverageSession() {
+
+    
     const [averageSession, setAverageSession] = useState([]);
     const USER_ID = 12;
 
@@ -36,6 +38,7 @@ function LinechartAverageSession() {
             try {
                 const averageSession = await getAverageSession(USER_ID);
                 setAverageSession(averageSession);
+                console.log("averagesession", averageSession)
             } catch (error) {
                 console.log(error);
             }

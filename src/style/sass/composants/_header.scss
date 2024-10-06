@@ -1,7 +1,10 @@
 header {
     display: flex;
     background-color: black;
+    align-items: center;
+    justify-content: space-between;
     padding : 10px;
+    height: 81px;
 }
 
 .menu {
@@ -9,6 +12,8 @@ header {
     padding-left: 10%;
     display: flex;
     color: white;
+    margin-right: 80px;
+    font-size: 24px;
     justify-content: space-between;
     &__label {
         display: flex;
@@ -17,8 +22,9 @@ header {
 }
 
 .logo {
-    width: 20%;
-    object-fit: cover;
+    width: 13%;
+    margin-left: 10px;
+    object-fit: contain;
     & img {
         width: 100%;
     }
