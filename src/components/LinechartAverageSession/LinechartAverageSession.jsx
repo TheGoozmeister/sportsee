@@ -8,18 +8,19 @@ function LinechartAverageSession() {
 
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
-            console.log(payload); 
             return (
                 <div
                     style={{
                         background: 'white',
-                        fontSize: 10,
-                        fontWeight: 500,
+                        color: "black",
+                        fontSize: '10px',
+                        fontWeight: '500',
                         textAlign: 'center',
-                        padding: 5,
-                        borderRadius: 5,
+                        padding: '5px',
+                        borderRadius: '5px',
                     }}
                 >
+                    {/* On affiche la durée en minutes si elle est disponible */}
                     {payload[0]?.value ? (
                         <p>{`${payload[0].value} min`}</p>
                     ) : (
@@ -87,7 +88,7 @@ function LinechartAverageSession() {
                     <Tooltip
                         content={<CustomTooltip />}
                         cursor={{ stroke: 'rgba(255, 255, 255, 0.2)', strokeWidth: 50 }}
-                        offset={20}
+                        
                     />
                 </LineChart>
             </ResponsiveContainer>
