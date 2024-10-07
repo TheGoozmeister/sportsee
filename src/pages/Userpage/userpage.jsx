@@ -20,7 +20,8 @@ function Userpage () {
         async function getOneUser() {
             try {
                 const user = await getUser(USER_ID);
-                setUserInfos(user.data.userInfos);
+                console.log("user in page", user)
+                setUserInfos(user.userInfos);
             } catch (error) {
                 console.log(error);
             }

@@ -37,8 +37,7 @@ function LinechartAverageSession(props) {
         async function getAverage() {
             try {
                 const averageSession = await getAverageSession(userId);
-                setAverageSession(averageSession);
-                console.log("averagesession", averageSession)
+                setAverageSession(averageSession.sessions);
             } catch (error) {
                 console.log(error);
             }

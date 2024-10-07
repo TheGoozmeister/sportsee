@@ -12,7 +12,7 @@ function Barchart(props) {
         async function getActivity() {
             try {
                 const userActivity = await getUserActivity(userId);
-                const activityWithIndex = userActivity.map((entry, index) => ({ ...entry, index: index + 1 }));
+                const activityWithIndex = userActivity.sessions.map((entry, index) => ({ ...entry, index: index + 1 }));
                 setActivity(activityWithIndex);
             } catch (error) {
                 console.log(error);
